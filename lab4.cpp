@@ -19,7 +19,7 @@ void inputText(char text[], bool fromFile) {
         file.close();
     }
     else {
-        cout << "Ââåäèòå ïîñëåäîâàòåëüíîñòü ñëîâ (îêîí÷àíèå - òî÷êà):" << endl;
+        cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã®Ã¢Ã Ã²Ã¥Ã«Ã¼Ã­Ã®Ã±Ã²Ã¼ Ã±Ã«Ã®Ã¢ (Ã®ÃªÃ®Ã­Ã·Ã Ã­Ã¨Ã¥ - Ã²Ã®Ã·ÃªÃ ):" << endl;
         cin.get();
         cout.flush();
         cin.getline(text, MAX_TEXT_LENGTH);
@@ -85,7 +85,7 @@ void editText(char input[], char output[]) {
 }
 
 void outputResult(char text[]) {
-    cout << "Ðåçóëüòàò îáðàáîòêè:" << endl
+    cout << "ÃÃ¥Ã§Ã³Ã«Ã¼Ã²Ã Ã² Ã®Ã¡Ã°Ã Ã¡Ã®Ã²ÃªÃ¨:" << endl
         << text << endl;
 }
 
@@ -127,14 +127,14 @@ bool containsDigit(char* word) {
 
 void printWordsWithoutDigits(char words[][MAX_LENGTH], int wordCount) {
     bool found = false;
-    cout << "Ñëîâà, íå ñîäåðæàùèå öèôðû:" << endl;
+    cout << "Ã‘Ã«Ã®Ã¢Ã , Ã­Ã¥ Ã±Ã®Ã¤Ã¥Ã°Ã¦Ã Ã¹Ã¨Ã¥ Ã¶Ã¨Ã´Ã°Ã»:" << endl;
     for (int i = 0; i < wordCount; i++) {
         if (!containsDigit(words[i])) {
             cout << words[i] << " ";
             found = true;
         }
     }
-    if (!found) cout << "Íåò ñëîâ áåç öèôð" << endl;
+    if (!found) cout << "ÃÃ¥Ã² Ã±Ã«Ã®Ã¢ Ã¡Ã¥Ã§ Ã¶Ã¨Ã´Ã°" << endl;
 }
 
 void capitalizeFirstLetter(char input[], char output[]) {
@@ -222,7 +222,7 @@ void boyerMooreSearch(char text[], char pattern[]) {
         int j = patternLen - 1;
         while (j >= 0 && pattern[j] == text[shift + j]) j--;
         if (j < 0) {
-            cout << "Íàéäåíî íà ïîçèöèè: " << shift << endl;
+            cout << "ÃÃ Ã©Ã¤Ã¥Ã­Ã® Ã­Ã  Ã¯Ã®Ã§Ã¨Ã¶Ã¨Ã¨: " << shift << endl;
             found = true;
             shift += (shift + patternLen < stringLen) ? badChar[(unsigned char)text[shift + patternLen]] : 1;
         }
@@ -231,7 +231,7 @@ void boyerMooreSearch(char text[], char pattern[]) {
             shift += max(1, badChar[(unsigned char)badCharInText] - (patternLen - 1 - j));
         }
     }
-    if (!found) cout << "Ïîäñòðîêà íå íàéäåíà" << endl;
+    if (!found) cout << "ÃÃ®Ã¤Ã±Ã²Ã°Ã®ÃªÃ  Ã­Ã¥ Ã­Ã Ã©Ã¤Ã¥Ã­Ã " << endl;
 }
 
 void searchSubstring(char text[], char pattern[]) {
@@ -244,22 +244,22 @@ void searchSubstring(char text[], char pattern[]) {
             if (text[i + j] != pattern[j]) break;
         }
         if (j == substringLength) {
-            cout << "Ïîäñòðîêà íàéäåíà íà ïîçèöèè " << i << endl;
+            cout << "ÃÃ®Ã¤Ã±Ã²Ã°Ã®ÃªÃ  Ã­Ã Ã©Ã¤Ã¥Ã­Ã  Ã­Ã  Ã¯Ã®Ã§Ã¨Ã¶Ã¨Ã¨ " << i << endl;
             found = true;
         }
     }
-    if (!found) cout << "Ïîäñòðîêà íå íàéäåíà" << endl;
+    if (!found) cout << "ÃÃ®Ã¤Ã±Ã²Ã°Ã®ÃªÃ  Ã­Ã¥ Ã­Ã Ã©Ã¤Ã¥Ã­Ã " << endl;
 }
 
-void fourthLabMenu() {
+int main() {
     char input[MAX_TEXT_LENGTH] = {0}, output[MAX_TEXT_LENGTH] = {0};
     char words[MAX_WORDS][MAX_LENGTH];
     char substring[MAX_TEXT_LENGTH] = { 0 };
     int choice;
-    cout << endl << "Çàäàíèå 1." << endl;
-    typeOfInput: cout << "Âûáåðèòå ñïîñîá ââîäà:" << endl
-    << "1) Ñ êëàâèàòóðû" << endl
-    << "2) Ñ ôàéëà" << endl;
+    cout << endl << "Ã‡Ã Ã¤Ã Ã­Ã¨Ã¥ 1." << endl;
+    cout << "Ã‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã±Ã¯Ã®Ã±Ã®Ã¡ Ã¢Ã¢Ã®Ã¤Ã :" << endl
+    << "1) Ã‘ ÃªÃ«Ã Ã¢Ã¨Ã Ã²Ã³Ã°Ã»" << endl
+    << "2) Ã‘ Ã´Ã Ã©Ã«Ã " << endl;
     cin >> choice;
     if (choice == 1 || choice == 2) {
         bool fromFile = (choice == 2);
@@ -267,31 +267,32 @@ void fourthLabMenu() {
         cin.sync();
         inputText(input, fromFile);
         editText(input, output);
-        cout << endl << "Çàäàíèå 2." << endl;
+        cout << endl << "Ã‡Ã Ã¤Ã Ã­Ã¨Ã¥ 2." << endl;
         outputResult(output);
         cout << endl
-            << "Çàäàíèå 3." << endl; // 3 Âûâåñòè íà ýêðàí ñëîâà ïîñëåäîâàòåëüíîñòè, íå ñîäåðæàùèå öèôð.
+            << "Ã‡Ã Ã¤Ã Ã­Ã¨Ã¥ 3." << endl; // 3 Ã‚Ã»Ã¢Ã¥Ã±Ã²Ã¨ Ã­Ã  Ã½ÃªÃ°Ã Ã­ Ã±Ã«Ã®Ã¢Ã  Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã®Ã¢Ã Ã²Ã¥Ã«Ã¼Ã­Ã®Ã±Ã²Ã¨, Ã­Ã¥ Ã±Ã®Ã¤Ã¥Ã°Ã¦Ã Ã¹Ã¨Ã¥ Ã¶Ã¨Ã´Ã°.
         int wordCount = extractWords(output, words);
         printWordsWithoutDigits(words, wordCount);
         cout << endl << endl << 
-            "Çàäàíèå 4." << endl; // 1 Âûâåñòè íà ýêðàí òó æå ïîñëåäîâàòåëüíîñòü, çàìåíèâ âî âñåõ ñëîâàõ ïåðâóþ áóêâó ñîîòâåòñòâóþùåé ïðîïèñíîé áóêâîé.
+            "Ã‡Ã Ã¤Ã Ã­Ã¨Ã¥ 4." << endl; // 1 Ã‚Ã»Ã¢Ã¥Ã±Ã²Ã¨ Ã­Ã  Ã½ÃªÃ°Ã Ã­ Ã²Ã³ Ã¦Ã¥ Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã®Ã¢Ã Ã²Ã¥Ã«Ã¼Ã­Ã®Ã±Ã²Ã¼, Ã§Ã Ã¬Ã¥Ã­Ã¨Ã¢ Ã¢Ã® Ã¢Ã±Ã¥Ãµ Ã±Ã«Ã®Ã¢Ã Ãµ Ã¯Ã¥Ã°Ã¢Ã³Ã¾ Ã¡Ã³ÃªÃ¢Ã³ Ã±Ã®Ã®Ã²Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã¥Ã© Ã¯Ã°Ã®Ã¯Ã¨Ã±Ã­Ã®Ã© Ã¡Ã³ÃªÃ¢Ã®Ã©.
             capitalizeFirstLetter(input, output);
             outputResult(output);
         cout << endl;
-        cout << "Çàäàíèå 5." << endl
-            << "Ââåäèòå ïîäñòðîêó, êîòîðóþ íóæíî íàéòè:" << endl;
+        cout << "Ã‡Ã Ã¤Ã Ã­Ã¨Ã¥ 5." << endl
+            << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¯Ã®Ã¤Ã±Ã²Ã°Ã®ÃªÃ³, ÃªÃ®Ã²Ã®Ã°Ã³Ã¾ Ã­Ã³Ã¦Ã­Ã® Ã­Ã Ã©Ã²Ã¨:" << endl;
         cin.get();
         cout.flush();
         cin.getline(substring, MAX_TEXT_LENGTH);
-        cout << "Ëèíåéíûé ïîèñê:" << endl;
+        cout << "Ã‹Ã¨Ã­Ã¥Ã©Ã­Ã»Ã© Ã¯Ã®Ã¨Ã±Ãª:" << endl;
         searchSubstring(output, substring);
-        cout << "Àëãîðèòì Áîéåðà-Ìóðà:" << endl;
+        cout << "Ã€Ã«Ã£Ã®Ã°Ã¨Ã²Ã¬ ÃÃ®Ã©Ã¥Ã°Ã -ÃŒÃ³Ã°Ã :" << endl;
         boyerMooreSearch(output, substring);
         cout << endl;
         main(); 
     }
     else {
-        cout << "Âûáðàí íåñóùåñòâóþùèé ïóíêò. Âûáåðèòå äðóãîé ïóíêò" << endl;
-        goto typeOfInput;
+        cout << "Ã‚Ã»Ã¡Ã°Ã Ã­ Ã­Ã¥Ã±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã¨Ã© Ã¯Ã³Ã­ÃªÃ². Ã‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã¤Ã°Ã³Ã£Ã®Ã© Ã¯Ã³Ã­ÃªÃ²" << endl;
+        main();
     }
 }
+
